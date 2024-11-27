@@ -31,33 +31,6 @@ nav ul li a:hover {
     color: #f4a261;
 }
 
-.hero {
-    text-align: center;
-    padding: 50px 20px;
-    background-color: #f9f9f9;
-    position: relative;
-}
-
-.hero-content {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #333;
-}
-
-.hero h1 {
-    font-size: 50px;
-    font-weight: bold;
-    color: #2a9d8f;
-}
-
-.hero p {
-    font-size: 24px;
-    font-style: italic;
-    color: #e76f51;
-}
-
 .video-container {
     margin-top: 20px;
 }
