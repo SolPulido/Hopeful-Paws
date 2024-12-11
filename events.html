@@ -80,6 +80,13 @@
             padding-top: 40px; /* Added padding to ensure title doesn't overlap with sidebar */
         }
 
+        /* Centered Title */
+        .content h1 {
+            text-align: center; /* Center the title */
+            font-size: 2rem;
+            color: #2f4f4f;
+        }
+
         .event-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -100,7 +107,7 @@
             width: 100%;
             height: auto; /* Maintain aspect ratio */
             max-width: 100%; /* Ensure image doesn't stretch beyond container */
-            max-height: 200px; /* Limit image height */
+            max-height: 150px; /* Reduced max height to make images smaller */
         }
 
         .event-card .event-info {
