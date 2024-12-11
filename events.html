@@ -1,1 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Pet Shelter Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        /* Sidebar Styling */
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: #2f4f4f;
+            color: white;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .sidebar select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            margin-top: 10px;
+            background-color: #f4f4f4;
+            color: #333;
+            border-radius: 5px;
+        }
+        .sidebar select:focus {
+            outline: none;
+            background-color: #ddd;
+        }
+        /* Main content styling */
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+            width: 100%;
+        }
+        .event-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .event-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            background-color: #fff;
+        }
+        .event-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .event-card .event-info {
+            padding: 15px;
+        }
+        .event-card .event-info h3 {
+            margin: 0;
+            color: #2f4f4f;
+        }
+        .event-card .event-info p {
+            font-size: 14px;
+            color: #666;
+        }
+        .event-card .event-date {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Event Types</h2>
+        <select>
+            <option value="adoption">Adoption Events</option>
+            <option value="fundraisers">Fundraisers</option>
+            <option value="volunteer">Volunteer Drives</option>
+            <option value="training">Pet Training Workshops</option>
+            <option value="outreach">Community Outreach</option>
+            <option value="seminars">Pet Care Awareness Seminars</option>
+        </select>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="content">
+        <h1>Upcoming Events</h1>
+
+        <div class="event-container">
+
+            <!-- Event 1: Adoption Event -->
+            <div class="event-card">
+                <img src="https://via.placeholder.com/400x200?text=Adoption+Event" alt="Adoption Event">
+                <div class="event-info">
+                    <h3>Adoption Event</h3>
+                    <p>Join us for an exciting day of finding your new furry friend! Our Adoption Event is a great opportunity to meet and adopt pets looking for their forever homes. You'll be able to interact with animals, learn about their stories, and find the perfect companion for you.</p>
+                </div>
+                <div class="event-date">April 15, 2024</div>
+            </div>
+
+            <!-- Event 2: Fundraising Gala -->
+            <div class="event-card">
+                <img src="https://via.placeholder.com/400x200?text=Fundraising+Gala" alt="Fundraising Gala">
+                <div class="event-info">
+                    <h3>Fundraising Gala</h3>
+                    <p>Our annual Fundraising Gala is a night of fun, food, and fundraising to support the shelter and our mission. There will be a silent auction, live entertainment, and a chance to network with other animal lovers. All proceeds go toward helping our pets get the care they need.</p>
+                </div>
+                <div class="event-date">May 20, 2024</div>
+            </div>
+
+            <!-- Event 3: Volunteer Recruitment Day -->
+            <div class="event-card">
+                <img src="https://via.placeholder.com/400x200?text=Volunteer+Day" alt="Volunteer Recruitment Day">
+                <div class="event-info">
+                    <h3>Volunteer Recruitment Day</h3>
+                    <p>Want to give back? Our Volunteer Recruitment Day is the perfect opportunity to learn how you can get involved and make a difference in the lives of our animals. We’ll provide training, show you around, and give you all the tools you need to start volunteering.</p>
+                </div>
+                <div class="event-date">June 5, 2024</div>
+            </div>
+
+            <!-- Event 4: Pet Training Workshop -->
+            <div class="event-card">
+                <img src="https://via.placeholder.com/400x200?text=Pet+Training+Workshop" alt="Pet Training Workshop">
+                <div class="event-info">
+                    <h3>Pet Training Workshop</h3>
+                    <p>Looking to improve your pet's behavior or training? Our Pet Training Workshop offers hands-on sessions with experienced trainers. Whether you have a dog or cat, you'll learn useful techniques to enhance your pet’s skills and foster a stronger bond between you and your companion.</p>
+                </div>
+                <div class="event-date">July 12, 2024</div>
+            </div>
+
+            <!-- Event 5: Community Outreach Day -->
+            <div class="event-card">
+                <img src="https://via.placeholder.com/400x200?text=Community+Outreach" alt="Community Outreach Day">
+                <div class="event-info">
+                    <h3>Community Outreach Day</h3>
+                    <p>We’re bringing the shelter to the community! Our Outreach Day is an opportunity to spread awareness about pet adoption, care, and responsible pet ownership. We’ll be setting up booths at local parks and offering free informational materials and small giveaways to help animals in need.</p>
+                </div>
+                <div class="event-date">August 18, 2024</div>
+            </div>
+
+            <!-- Event 6: Pet Care Awareness Seminar -->
+            <div class="event-card">
+                <img src="https://via.placeholder.com/400x200?text=Pet+Care+Seminar" alt="Pet Care Awareness Seminar">
+                <div class="event-info">
+                    <h3>Pet Care Awareness Seminar</h3>
+                    <p>Pet owners and prospective adopters alike can join us for a seminar on responsible pet ownership. Experts in veterinary care, pet nutrition, and general pet well-being will be speaking about how to provide the best care for your furry friend. This is a great way to get advice from professionals and learn about the latest in pet care.</p>
+                </div>
+                <div class="event-date">September 25, 2024</div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
 
