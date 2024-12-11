@@ -8,7 +8,36 @@
             margin: 0;
             padding: 0;
             display: flex;
+            flex-direction: column;
         }
+
+        /* Header Styling */
+        .header {
+            background-color: #2f4f4f;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .header nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .header nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .header nav a:hover {
+            background-color: #555;
+        }
+
         /* Sidebar Styling */
         .sidebar {
             width: 250px;
@@ -21,10 +50,12 @@
             left: 0;
             transition: width 0.3s ease;
         }
+
         .sidebar h2 {
             text-align: center;
             margin-bottom: 30px;
         }
+
         .sidebar select {
             width: 100%;
             padding: 10px;
@@ -35,21 +66,25 @@
             color: #333;
             border-radius: 5px;
         }
+
         .sidebar select:focus {
             outline: none;
             background-color: #ddd;
         }
+
         /* Main content styling */
         .content {
             margin-left: 250px;
             padding: 20px;
             width: 100%;
         }
+
         .event-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
         }
+
         .event-card {
             border: 1px solid #ddd;
             border-radius: 8px;
@@ -58,22 +93,27 @@
             position: relative;
             background-color: #fff;
         }
+
         .event-card img {
             width: 100%;
             height: 200px;
             object-fit: cover;
         }
+
         .event-card .event-info {
             padding: 15px;
         }
+
         .event-card .event-info h3 {
             margin: 0;
             color: #2f4f4f;
         }
+
         .event-card .event-info p {
             font-size: 14px;
             color: #666;
         }
+
         .event-card .event-date {
             position: absolute;
             top: 10px;
@@ -84,14 +124,30 @@
             border-radius: 5px;
             font-size: 12px;
         }
+
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
 
+    <!-- Header -->
+    <div class="header">
+        <h1>Pet Shelter</h1>
+        <nav>
+            <a href="#adopt">Adopt</a>
+            <a href="#donate">Donate</a>
+            <a href="#volunteer">Volunteer</a>
+            <a href="#about">About Us</a>
+        </nav>
+    </div>
+
     <!-- Sidebar -->
     <div class="sidebar">
         <h2>Event Types</h2>
-        <select>
+        <select id="event-type">
+            <option value="all">All Events</option>
             <option value="adoption">Adoption Events</option>
             <option value="fundraisers">Fundraisers</option>
             <option value="volunteer">Volunteer Drives</option>
@@ -108,7 +164,7 @@
         <div class="event-container">
 
             <!-- Event 1: Adoption Event -->
-            <div class="event-card">
+            <div class="event-card" data-category="adoption">
                 <img src="https://via.placeholder.com/400x200?text=Adoption+Event" alt="Adoption Event">
                 <div class="event-info">
                     <h3>Adoption Event</h3>
@@ -118,7 +174,7 @@
             </div>
 
             <!-- Event 2: Fundraising Gala -->
-            <div class="event-card">
+            <div class="event-card" data-category="fundraisers">
                 <img src="https://via.placeholder.com/400x200?text=Fundraising+Gala" alt="Fundraising Gala">
                 <div class="event-info">
                     <h3>Fundraising Gala</h3>
@@ -128,7 +184,7 @@
             </div>
 
             <!-- Event 3: Volunteer Recruitment Day -->
-            <div class="event-card">
+            <div class="event-card" data-category="volunteer">
                 <img src="https://via.placeholder.com/400x200?text=Volunteer+Day" alt="Volunteer Recruitment Day">
                 <div class="event-info">
                     <h3>Volunteer Recruitment Day</h3>
@@ -138,7 +194,7 @@
             </div>
 
             <!-- Event 4: Pet Training Workshop -->
-            <div class="event-card">
+            <div class="event-card" data-category="training">
                 <img src="https://via.placeholder.com/400x200?text=Pet+Training+Workshop" alt="Pet Training Workshop">
                 <div class="event-info">
                     <h3>Pet Training Workshop</h3>
@@ -148,7 +204,7 @@
             </div>
 
             <!-- Event 5: Community Outreach Day -->
-            <div class="event-card">
+            <div class="event-card" data-category="outreach">
                 <img src="https://via.placeholder.com/400x200?text=Community+Outreach" alt="Community Outreach Day">
                 <div class="event-info">
                     <h3>Community Outreach Day</h3>
@@ -158,7 +214,7 @@
             </div>
 
             <!-- Event 6: Pet Care Awareness Seminar -->
-            <div class="event-card">
+            <div class="event-card" data-category="seminars">
                 <img src="https://via.placeholder.com/400x200?text=Pet+Care+Seminar" alt="Pet Care Awareness Seminar">
                 <div class="event-info">
                     <h3>Pet Care Awareness Seminar</h3>
@@ -170,6 +226,23 @@
         </div>
     </div>
 
+    <script>
+        // Function to filter events based on selected category
+        document.getElementById('event-type').addEventListener('change', function() {
+            const selectedCategory = this.value;
+            const events = document.querySelectorAll('.event-card');
+
+            events.forEach(event => {
+                if (selectedCategory === 'all') {
+                    event.classList.remove('hidden');
+                } else if (event.getAttribute('data-category') === selectedCategory) {
+                    event.classList.remove('hidden');
+                } else {
+                    event.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>
-
